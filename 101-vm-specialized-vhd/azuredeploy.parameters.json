@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "osDiskVhdUri": {
+            "type": "string",
+            "metadata": {
+                "description": "Uri of the existing VHD"
+            }
+        },
+        "osType": {
+            "type": "string",
+            "allowedValues": [
+                "Windows",
+                "Linux"
+            ],
+            "metadata": {
+                "description": "Type of OS on the existing vhd"
+            }
+        },	
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "Basic_A1",
+            "metadata": {
+                "description": "Size of the VM"
+            }
+        },
+        "vmName": {
+            "type": "string",
+			"defaultValue": "t1000-sdc-mwi",
+            "metadata": {
+                "description": "Name of the VM (EX: t2001-mwi-jccc)"
+            }
+		},	
+		"vmVLAN": {
+            "type": "string",
+			"defaultValue": "t1000",
+            "metadata": {
+                "description": "Tenant VLAN ID"
+            }
+		},		
+		"vmCInitials": {
+            "type": "string",
+			"defaultValue": "sd",
+            "metadata": {
+                "description": "Company Initials"
+            }
+		},		
+		"vmCCInitials": {
+            "type": "string",
+			"defaultValue": "abc",
+            "metadata": {
+                "description": "Companies hosted company initials (IF ANY)"
+            }
+		},	
+        "vmSubnet": {
+            "type": "string",
+			"defaultValue": "10.20.1.0/28",
+            "metadata": {
+                "description": "10.20.1.0/28"
+            }
+		},	
+		"vmIP": {
+            "type": "string",
+			"defaultValue": "10.20.1.x",
+            "metadata": {
+                "description": "IP Address of VM"
+            }	
+		
+        }
+    }
+}
