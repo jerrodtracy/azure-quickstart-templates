@@ -121,8 +121,7 @@
             "name": "[variables('nicName')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                "[concat('Microsoft.Network/
-		    IPAddresses/', variables('publicIPAddressName'))]",
+                "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
                 "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
             ],
             "properties": {
@@ -131,10 +130,9 @@
                         "name": "ipconfig1",
                         "properties": {
 							"privateIPAddress": "[parameters('vmIP')]",
-                            "privateIPAllocationMethod": "Static",				
+                            "privateIPAllocationMethod": "Static",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]",
-				"idleTimeoutInMinutes": 15
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
                             },
                             "subnet": {
                                 "id": "[variables('subnetRef')]"
