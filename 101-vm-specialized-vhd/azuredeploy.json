@@ -72,7 +72,7 @@
     "variables": {
         "diagStorageAccountName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'diag')]",
         "api-version": "2015-06-15",
-        "addressPrefix": "10.",
+        "addressPrefix": "10.20.1.0/16",
         "subnetName": "[concat(parameters('vmVLAN'))]",
         "subnetPrefix": "[concat(parameters('vmSubnet'))]",
         "publicIPAddressName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'PubIP')]",
