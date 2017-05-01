@@ -72,12 +72,12 @@
     "variables": {
         "diagStorageAccountName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'diag')]",
         "api-version": "2015-06-15",
-        "addressPrefix": "[concat(parameters('vmSubnet'))]",
+        "addressPrefix": "10.20.1.0/16",
         "subnetName": "[concat(parameters('vmVLAN'))]",
         "subnetPrefix": "[concat(parameters('vmSubnet'))]",
         "publicIPAddressName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'PubIP')]",
         "publicIPAddressType": "Static",
-        "virtualNetworkName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'VNET')]",
+        "virtualNetworkName": "SDAzureVMVNET",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
         "nicName": "[concat(parameters('vmVLAN'),parameters('vmCInitials'),parameters('vmCCInitials'),'VMNic')]"
